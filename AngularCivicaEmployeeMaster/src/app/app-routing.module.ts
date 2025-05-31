@@ -21,6 +21,7 @@ import { TaxdeductionemployeemonthlyreportresultComponent } from './components/r
 import { YearlyeachemployeesalaryComponent } from './components/reports/yearlyeachemployeesalary/yearlyeachemployeesalary.component';
 import { HomeComponent } from './components/home/home.component';
 import { ReportdeciderComponent } from './components/shared/reportdecider/reportdecider.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -44,7 +45,8 @@ const routes: Routes = [
     
     {path:'monthlyeachemployee', component:MonthlyeachemployeeComponent},
     {path:'eachemployeesalaryslip/:employeeId', component:EachemployeesalaryslipmonthlyComponent},
-    {path:'yearlyeachemployeesalary/:employeeId',component:YearlyeachemployeesalaryComponent}
+    {path:'yearlyeachemployeesalary/:employeeId',component:YearlyeachemployeesalaryComponent},
+    { path: 'dashboard', component: DashboardComponent, canActivate: [authGuard] }
 ];
 
 

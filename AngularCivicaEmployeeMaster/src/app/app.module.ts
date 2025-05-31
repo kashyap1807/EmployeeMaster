@@ -29,6 +29,7 @@ import { EachemployeesalaryslipmonthlyComponent } from './components/reports/eac
 import { YearlyeachemployeesalaryComponent } from './components/reports/yearlyeachemployeesalary/yearlyeachemployeesalary.component';
 import { HomeComponent } from './components/home/home.component';
 import { ReportdeciderComponent } from './components/shared/reportdecider/reportdecider.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,6 @@ import { ReportdeciderComponent } from './components/shared/reportdecider/report
     UpdateEmployeeComponent,
     EmployeeDetailsComponent,
     MonthlysalaryreportComponent,
-   
     MonthlyeachemployeeComponent,
     EachemployeesalaryslipmonthlyComponent,
     YearlysalaryreportComponent,
@@ -54,7 +54,8 @@ import { ReportdeciderComponent } from './components/shared/reportdecider/report
     TaxdeductionemployeemonthlyreportresultComponent,
     YearlyeachemployeesalaryComponent,
     HomeComponent,
-    ReportdeciderComponent
+    ReportdeciderComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +65,7 @@ import { ReportdeciderComponent } from './components/shared/reportdecider/report
     ReactiveFormsModule,
     NgbModule
   ],
-    providers: [DatePipe,TitleCasePipe,AuthService,{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],
+  providers: [DatePipe,TitleCasePipe,AuthService,{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
