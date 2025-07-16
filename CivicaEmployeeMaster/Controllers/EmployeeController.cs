@@ -20,12 +20,20 @@ namespace CivicaEmployeeMaster.Controllers
         [HttpGet("GetAllEmployees")]
         public IActionResult GetAllEmployees()
         {
-            var response = _employeeService.GetEmployees();
-            if (!response.Success)
+            try
             {
-                return NotFound(response);
+                var response = _employeeService.GetEmployees();
+                if (!response.Success)
+                {
+                    return NotFound(response);
+                }
+                return Ok(response);
             }
-            return Ok(response);
+            catch(Exception ex)
+            {
+                return NotFound(ex); 
+            }
+            
         }
         [HttpGet("GetAllEmployeesByPagination")]
         public IActionResult GetPaginatedEmployees(string? search, int page = 1, int pageSize = 4, string sortOrder = "asc")
